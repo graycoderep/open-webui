@@ -2854,6 +2854,8 @@
 	"settings.personal.audio.kokoroVoice.label": "Indstil stemme",
 	"settings.personal.audio.language.description": "Angiv et sprog til talegenkendelse, eller lad feltet være tomt for automatisk registrering.",
 	"settings.personal.audio.language.label": "Sprog",
+	"settings.personal.audio.micThreshold.description": "",
+	"settings.personal.audio.micThreshold.label": "",
 	"settings.personal.audio.sections.sttSettings.title": "STT-indstillinger",
 	"settings.personal.audio.sections.ttsSettings.title": "TTS-indstillinger",
 	"settings.personal.audio.sections.voice.title": "Stemme",

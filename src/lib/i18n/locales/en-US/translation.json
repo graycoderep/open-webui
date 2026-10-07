@@ -2857,6 +2857,8 @@
 	"settings.personal.audio.kokoroVoice.label": "Set Voice",
 	"settings.personal.audio.language.description": "Set a speech recognition language or leave it blank to detect automatically.",
 	"settings.personal.audio.language.label": "Language",
+	"settings.personal.audio.micThreshold.description": "Sound quieter than this (% of full-scale RMS) is not treated as speech, so background noise does not start a recording. 0 = any sound. Speech is usually 10–30 %, room noise about 1 %.",
+	"settings.personal.audio.micThreshold.label": "Microphone threshold (Call mode)",
 	"settings.personal.audio.sections.sttSettings.title": "STT Settings",
 	"settings.personal.audio.sections.ttsSettings.title": "TTS Settings",
 	"settings.personal.audio.sections.voice.title": "Voice",

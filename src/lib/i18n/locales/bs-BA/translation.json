@@ -2870,6 +2870,8 @@
 	"settings.personal.audio.kokoroVoice.label": "Postavi glas",
 	"settings.personal.audio.language.description": "Postavi jezik prepoznavanja govora ili ostavi prazno za automatsko otkrivanje.",
 	"settings.personal.audio.language.label": "Jezik",
+	"settings.personal.audio.micThreshold.description": "",
+	"settings.personal.audio.micThreshold.label": "",
 	"settings.personal.audio.sections.sttSettings.title": "STT postavke",
 	"settings.personal.audio.sections.ttsSettings.title": "TTS postavke",
 	"settings.personal.audio.sections.voice.title": "Glas",

@@ -2838,6 +2838,8 @@
 	"settings.personal.audio.kokoroVoice.label": "設定語音",
 	"settings.personal.audio.language.description": "設定語音辨識語言，或留空以進行自動偵測。",
 	"settings.personal.audio.language.label": "語言",
+	"settings.personal.audio.micThreshold.description": "",
+	"settings.personal.audio.micThreshold.label": "",
 	"settings.personal.audio.sections.sttSettings.title": "語音轉文字 (STT) 設定",
 	"settings.personal.audio.sections.ttsSettings.title": "文字轉語音 (TTS) 設定",
 	"settings.personal.audio.sections.voice.title": "語音",

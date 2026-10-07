@@ -2854,6 +2854,8 @@
 	"settings.personal.audio.kokoroVoice.label": "",
 	"settings.personal.audio.language.description": "",
 	"settings.personal.audio.language.label": "Dil",
+	"settings.personal.audio.micThreshold.description": "",
+	"settings.personal.audio.micThreshold.label": "",
 	"settings.personal.audio.sections.sttSettings.title": "",
 	"settings.personal.audio.sections.ttsSettings.title": "",
 	"settings.personal.audio.sections.voice.title": "",

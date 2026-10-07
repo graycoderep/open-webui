@@ -2854,6 +2854,8 @@
 	"settings.personal.audio.kokoroVoice.label": "音声を設定",
 	"settings.personal.audio.language.description": "音声認識の言語を設定します。自動検出する場合は空欄にしてください。",
 	"settings.personal.audio.language.label": "言語",
+	"settings.personal.audio.micThreshold.description": "",
+	"settings.personal.audio.micThreshold.label": "",
 	"settings.personal.audio.sections.sttSettings.title": "STT設定",
 	"settings.personal.audio.sections.ttsSettings.title": "TTS 設定",
 	"settings.personal.audio.sections.voice.title": "ボイス",

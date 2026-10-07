@@ -2854,6 +2854,8 @@
 	"settings.personal.audio.kokoroVoice.label": "Ezarri ahotsa",
 	"settings.personal.audio.language.description": "Ezarri hizketa-ezagutzaren hizkuntza edo utzi hutsik automatikoki hautemateko.",
 	"settings.personal.audio.language.label": "Hizkuntza",
+	"settings.personal.audio.micThreshold.description": "",
+	"settings.personal.audio.micThreshold.label": "",
 	"settings.personal.audio.sections.sttSettings.title": "STT ezarpenak",
 	"settings.personal.audio.sections.ttsSettings.title": "TTS ezarpenak",
 	"settings.personal.audio.sections.voice.title": "Ahotsa",

@@ -2854,6 +2854,8 @@
 	"settings.personal.audio.kokoroVoice.label": "Ibutang ang tingog",
 	"settings.personal.audio.language.description": "Itakda ang pinulongan sa pag-ila sa sinultihan o biyai nga walay sulod aron awtomatikong mailhan.",
 	"settings.personal.audio.language.label": "Pinulongan",
+	"settings.personal.audio.micThreshold.description": "",
+	"settings.personal.audio.micThreshold.label": "",
 	"settings.personal.audio.sections.sttSettings.title": "Mga setting sa STT",
 	"settings.personal.audio.sections.ttsSettings.title": "Mga Setting sa TTS",
 	"settings.personal.audio.sections.voice.title": "Tingog",

@@ -2838,6 +2838,8 @@
 	"settings.personal.audio.kokoroVoice.label": "Đặt Giọng nói",
 	"settings.personal.audio.language.description": "",
 	"settings.personal.audio.language.label": "Ngôn ngữ",
+	"settings.personal.audio.micThreshold.description": "",
+	"settings.personal.audio.micThreshold.label": "",
 	"settings.personal.audio.sections.sttSettings.title": "Cài đặt Nhận dạng Giọng nói",
 	"settings.personal.audio.sections.ttsSettings.title": "Cài đặt Chuyển văn bản thành Giọng nói",
 	"settings.personal.audio.sections.voice.title": "Giọng nói",

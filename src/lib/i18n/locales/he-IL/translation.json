@@ -2870,6 +2870,8 @@
 	"settings.personal.audio.kokoroVoice.label": "הגדר קול",
 	"settings.personal.audio.language.description": "",
 	"settings.personal.audio.language.label": "שפה",
+	"settings.personal.audio.micThreshold.description": "",
+	"settings.personal.audio.micThreshold.label": "",
 	"settings.personal.audio.sections.sttSettings.title": "הגדרות חקירה של TTS",
 	"settings.personal.audio.sections.ttsSettings.title": "הגדרות TTS",
 	"settings.personal.audio.sections.voice.title": "",

@@ -2854,6 +2854,8 @@
 	"settings.personal.audio.kokoroVoice.label": "কন্ঠস্বর নির্ধারণ করুন",
 	"settings.personal.audio.language.description": "কণ্ঠস্বর শনাক্তকরণের ভাষা নির্ধারণ করুন বা স্বয়ংক্রিয় শনাক্তকরণের জন্য খালি রাখুন।",
 	"settings.personal.audio.language.label": "ভাষা",
+	"settings.personal.audio.micThreshold.description": "",
+	"settings.personal.audio.micThreshold.label": "",
 	"settings.personal.audio.sections.sttSettings.title": "STT সেটিংস",
 	"settings.personal.audio.sections.ttsSettings.title": "TTS সেটিংসমূহ",
 	"settings.personal.audio.sections.voice.title": "কণ্ঠস্বর",

@@ -2886,6 +2886,8 @@
 	"settings.personal.audio.kokoroVoice.label": "Задать голос",
 	"settings.personal.audio.language.description": "Задайте язык распознавания речи или оставьте поле пустым для автоматического определения.",
 	"settings.personal.audio.language.label": "Язык",
+	"settings.personal.audio.micThreshold.description": "Звук тише порога (% от полной шкалы RMS) не считается речью, и фоновый шум не запускает запись. 0 = любой звук. Речь обычно 10–30 %, шум комнаты около 1 %.",
+	"settings.personal.audio.micThreshold.label": "Порог громкости микрофона (режим звонка)",
 	"settings.personal.audio.sections.sttSettings.title": "Настройки распознавания речи",
 	"settings.personal.audio.sections.ttsSettings.title": "Настройки TTS",
 	"settings.personal.audio.sections.voice.title": "Голос",

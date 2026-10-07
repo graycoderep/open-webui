@@ -2854,6 +2854,8 @@
 	"settings.personal.audio.kokoroVoice.label": "Mengatur Suara",
 	"settings.personal.audio.language.description": "Atur bahasa pengenalan ucapan atau biarkan kosong untuk mendeteksi secara otomatis.",
 	"settings.personal.audio.language.label": "Bahasa",
+	"settings.personal.audio.micThreshold.description": "",
+	"settings.personal.audio.micThreshold.label": "",
 	"settings.personal.audio.sections.sttSettings.title": "Pengaturan STT",
 	"settings.personal.audio.sections.ttsSettings.title": "Pengaturan TTS",
 	"settings.personal.audio.sections.voice.title": "Suara",

@@ -26,6 +26,7 @@
 
 	let STTEngine = '';
 	let STTLanguage = '';
+	let STTMicThreshold = 0;
 
 	let TTSEngine = '';
 	let TTSEngineConfig = {};
@@ -96,6 +97,7 @@
 
 		STTEngine = $settings?.audio?.stt?.engine ?? '';
 		STTLanguage = $settings?.audio?.stt?.language ?? '';
+		STTMicThreshold = Number($settings?.audio?.stt?.micThreshold) || 0;
 
 		TTSEngine = $settings?.audio?.tts?.engine ?? '';
 		TTSEngineConfig = $settings?.audio?.tts?.engineConfig ?? {};
@@ -166,7 +168,8 @@
 			audio: {
 				stt: {
 					engine: STTEngine !== '' ? STTEngine : undefined,
-					language: STTLanguage !== '' ? STTLanguage : undefined
+					language: STTLanguage !== '' ? STTLanguage : undefined,
+					micThreshold: Number(STTMicThreshold) > 0 ? Number(STTMicThreshold) : undefined
 				},
 				tts: {
 					engine: TTSEngine !== '' ? TTSEngine : undefined,
@@ -238,6 +241,24 @@
 						setSpeechAutoSend(event.detail);
 					}}
 				/>
+			</UserSettingRow>
+
+			<UserSettingRow
+				label={$i18n.t('settings.personal.audio.micThreshold.label')}
+				description={$i18n.t('settings.personal.audio.micThreshold.description')}
+			>
+				<div class="relative flex items-center gap-1.5 text-xs text-gray-400 dark:text-gray-600">
+					<input
+						type="number"
+						min="0"
+						max="50"
+						step="0.5"
+						bind:value={STTMicThreshold}
+						aria-label={$i18n.t('settings.personal.audio.micThreshold.label')}
+						class="h-7 w-20 rounded-lg border border-gray-100/50 bg-gray-50/40 px-2 text-right text-xs text-gray-700 outline-hidden transition-colors focus:border-blue-400 dark:border-white/[0.04] dark:bg-white/[0.03] dark:text-gray-300 dark:focus:border-blue-500"
+					/>
+					%
+				</div>
 			</UserSettingRow>
 		</UserSettingSection>
 

@@ -2851,6 +2851,8 @@
 	"settings.personal.audio.kokoroVoice.label": "设置音色",
 	"settings.personal.audio.language.description": "设置语音识别语言，或留空以自动检测。",
 	"settings.personal.audio.language.label": "语言",
+	"settings.personal.audio.micThreshold.description": "",
+	"settings.personal.audio.micThreshold.label": "",
 	"settings.personal.audio.sections.sttSettings.title": "语音转文本设置",
 	"settings.personal.audio.sections.ttsSettings.title": "文本转语音设置",
 	"settings.personal.audio.sections.voice.title": "语音",

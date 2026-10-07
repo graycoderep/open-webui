@@ -2918,6 +2918,8 @@
 	"settings.personal.audio.kokoroVoice.label": "ضبط الصوت",
 	"settings.personal.audio.language.description": "عيّن لغة التعرف على الكلام أو اتركها فارغة لاكتشافها تلقائيًا.",
 	"settings.personal.audio.language.label": "اللغة",
+	"settings.personal.audio.micThreshold.description": "",
+	"settings.personal.audio.micThreshold.label": "",
 	"settings.personal.audio.sections.sttSettings.title": "STT اعدادات",
 	"settings.personal.audio.sections.ttsSettings.title": "TTS اعدادات",
 	"settings.personal.audio.sections.voice.title": "الصوت",

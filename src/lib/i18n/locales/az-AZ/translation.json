@@ -2854,6 +2854,8 @@
 	"settings.personal.audio.kokoroVoice.label": "Səsi təyin et",
 	"settings.personal.audio.language.description": "Nitqin tanınması üçün dil təyin edin və ya avtomatik müəyyən edilməsi üçün boş saxlayın.",
 	"settings.personal.audio.language.label": "Dil",
+	"settings.personal.audio.micThreshold.description": "",
+	"settings.personal.audio.micThreshold.label": "",
 	"settings.personal.audio.sections.sttSettings.title": "STT Ayarları",
 	"settings.personal.audio.sections.ttsSettings.title": "TTS Ayarları",
 	"settings.personal.audio.sections.voice.title": "Səs",

@@ -2870,6 +2870,8 @@
 	"settings.personal.audio.kokoroVoice.label": "Establir la veu",
 	"settings.personal.audio.language.description": "Definir un idioma de reconeixement de veu o deixar-lo en blanc per detectar-lo automàticament.",
 	"settings.personal.audio.language.label": "Idioma",
+	"settings.personal.audio.micThreshold.description": "",
+	"settings.personal.audio.micThreshold.label": "",
 	"settings.personal.audio.sections.sttSettings.title": "Preferències de STT",
 	"settings.personal.audio.sections.ttsSettings.title": "Preferències de TTS",
 	"settings.personal.audio.sections.voice.title": "Veu",

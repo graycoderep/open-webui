@@ -2854,6 +2854,8 @@
 	"settings.personal.audio.kokoroVoice.label": "குரலை அமைக்கவும்",
 	"settings.personal.audio.language.description": "",
 	"settings.personal.audio.language.label": "மொழி",
+	"settings.personal.audio.micThreshold.description": "",
+	"settings.personal.audio.micThreshold.label": "",
 	"settings.personal.audio.sections.sttSettings.title": "STT அமைப்புகள்",
 	"settings.personal.audio.sections.ttsSettings.title": "TTS அமைப்புகள்",
 	"settings.personal.audio.sections.voice.title": "குரல்",

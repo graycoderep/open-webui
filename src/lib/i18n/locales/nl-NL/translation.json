@@ -2854,6 +2854,8 @@
 	"settings.personal.audio.kokoroVoice.label": "Stel stem in",
 	"settings.personal.audio.language.description": "Stel een taal voor spraakherkenning in of laat dit leeg voor automatische detectie.",
 	"settings.personal.audio.language.label": "Taal",
+	"settings.personal.audio.micThreshold.description": "",
+	"settings.personal.audio.micThreshold.label": "",
 	"settings.personal.audio.sections.sttSettings.title": "STT Instellingen",
 	"settings.personal.audio.sections.ttsSettings.title": "TTS instellingen",
 	"settings.personal.audio.sections.voice.title": "Stem",

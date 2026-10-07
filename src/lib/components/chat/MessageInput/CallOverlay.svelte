@@ -162,6 +162,10 @@
 	};
 
 	const MIN_DECIBELS = -55;
+	// Microphone threshold (fraction of full-scale RMS). Sound below it is not treated as speech,
+	// so background noise does not start a recording. 0 keeps the previous behaviour (any sound).
+	$: micThreshold =
+		Math.max(0, Math.min(50, Number($settings?.audio?.stt?.micThreshold) || 0)) / 100;
 	const VISUALIZER_BUFFER_LENGTH = 300;
 
 	const transcribeHandler = async (audioBlob) => {
@@ -351,7 +355,8 @@
 				}
 
 				// Check if initial speech/noise has started
-				const hasSound = domainData.some((value) => value > 0);
+				const hasSound =
+					micThreshold > 0 ? rmsLevel >= micThreshold : domainData.some((value) => value > 0);
 				if (hasSound) {
 					// BIG RED TEXT
 					console.log('%c%s', 'color: red; font-size: 20px;', '🔊 Sound detected');

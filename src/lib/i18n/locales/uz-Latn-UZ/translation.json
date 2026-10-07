@@ -2854,6 +2854,8 @@
 	"settings.personal.audio.kokoroVoice.label": "Ovozni sozlash",
 	"settings.personal.audio.language.description": "",
 	"settings.personal.audio.language.label": "Til",
+	"settings.personal.audio.micThreshold.description": "",
+	"settings.personal.audio.micThreshold.label": "",
 	"settings.personal.audio.sections.sttSettings.title": "STT sozlamalari",
 	"settings.personal.audio.sections.ttsSettings.title": "TTS sozlamalari",
 	"settings.personal.audio.sections.voice.title": "Ovoz",

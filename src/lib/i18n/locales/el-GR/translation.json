@@ -2854,6 +2854,8 @@
 	"settings.personal.audio.kokoroVoice.label": "Ορισμός Φωνής",
 	"settings.personal.audio.language.description": "",
 	"settings.personal.audio.language.label": "Γλώσσα",
+	"settings.personal.audio.micThreshold.description": "",
+	"settings.personal.audio.micThreshold.label": "",
 	"settings.personal.audio.sections.sttSettings.title": "Ρυθμίσεις Μετατροπής Ομιλίας σε Κείμενο",
 	"settings.personal.audio.sections.ttsSettings.title": "Ρυθμίσεις μετατροπής Κειμένου σε Ομιλία",
 	"settings.personal.audio.sections.voice.title": "Φωνή",

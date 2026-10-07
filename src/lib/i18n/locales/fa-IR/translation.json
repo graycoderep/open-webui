@@ -2854,6 +2854,8 @@
 	"settings.personal.audio.kokoroVoice.label": "تنظیم صدا",
 	"settings.personal.audio.language.description": "",
 	"settings.personal.audio.language.label": "زبان",
+	"settings.personal.audio.micThreshold.description": "",
+	"settings.personal.audio.micThreshold.label": "",
 	"settings.personal.audio.sections.sttSettings.title": "تنظیمات تبدیل صدا به متن",
 	"settings.personal.audio.sections.ttsSettings.title": "تنظیمات TTS",
 	"settings.personal.audio.sections.voice.title": "صوت",

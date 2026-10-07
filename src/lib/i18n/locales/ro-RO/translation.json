@@ -2870,6 +2870,8 @@
 	"settings.personal.audio.kokoroVoice.label": "Setează Voce",
 	"settings.personal.audio.language.description": "Setați o limbă pentru recunoașterea vocală sau lăsați câmpul gol pentru detectare automată.",
 	"settings.personal.audio.language.label": "Limbă",
+	"settings.personal.audio.micThreshold.description": "",
+	"settings.personal.audio.micThreshold.label": "",
 	"settings.personal.audio.sections.sttSettings.title": "Setări STT",
 	"settings.personal.audio.sections.ttsSettings.title": "Setări TTS",
 	"settings.personal.audio.sections.voice.title": "Voce",

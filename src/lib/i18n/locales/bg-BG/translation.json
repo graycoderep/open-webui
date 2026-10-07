@@ -2854,6 +2854,8 @@
 	"settings.personal.audio.kokoroVoice.label": "Задай Глас",
 	"settings.personal.audio.language.description": "Задайте език за разпознаване на реч или оставете празно за автоматично разпознаване.",
 	"settings.personal.audio.language.label": "Език",
+	"settings.personal.audio.micThreshold.description": "",
+	"settings.personal.audio.micThreshold.label": "",
 	"settings.personal.audio.sections.sttSettings.title": "STT Настройки",
 	"settings.personal.audio.sections.ttsSettings.title": "TTS Настройки",
 	"settings.personal.audio.sections.voice.title": "Глас",

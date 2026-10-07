@@ -2854,6 +2854,8 @@
 	"settings.personal.audio.kokoroVoice.label": "آواز کے لئے سیٹ کریں",
 	"settings.personal.audio.language.description": "",
 	"settings.personal.audio.language.label": "زبان",
+	"settings.personal.audio.micThreshold.description": "",
+	"settings.personal.audio.micThreshold.label": "",
 	"settings.personal.audio.sections.sttSettings.title": "ایس ٹی ٹی ترتیبات",
 	"settings.personal.audio.sections.ttsSettings.title": "ٹی ٹی ایس ترتیبات",
 	"settings.personal.audio.sections.voice.title": "آواز",

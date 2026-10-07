@@ -2854,6 +2854,8 @@
 	"settings.personal.audio.kokoroVoice.label": "Stimme festlegen",
 	"settings.personal.audio.language.description": "Legt eine Sprache für die Spracherkennung fest. Leer lassen, um sie automatisch zu erkennen.",
 	"settings.personal.audio.language.label": "Sprache",
+	"settings.personal.audio.micThreshold.description": "",
+	"settings.personal.audio.micThreshold.label": "",
 	"settings.personal.audio.sections.sttSettings.title": "STT-Einstellungen",
 	"settings.personal.audio.sections.ttsSettings.title": "TTS-Einstellungen",
 	"settings.personal.audio.sections.voice.title": "Stimme",

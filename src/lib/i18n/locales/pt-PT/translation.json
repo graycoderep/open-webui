@@ -2870,6 +2870,8 @@
 	"settings.personal.audio.kokoroVoice.label": "Definir Voz",
 	"settings.personal.audio.language.description": "",
 	"settings.personal.audio.language.label": "Idioma",
+	"settings.personal.audio.micThreshold.description": "",
+	"settings.personal.audio.micThreshold.label": "",
 	"settings.personal.audio.sections.sttSettings.title": "Definições STT",
 	"settings.personal.audio.sections.ttsSettings.title": "Definições TTS",
 	"settings.personal.audio.sections.voice.title": "Voz",

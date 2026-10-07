@@ -2854,6 +2854,8 @@
 	"settings.personal.audio.kokoroVoice.label": "Socraigh Guth",
 	"settings.personal.audio.language.description": "Socraigh teanga aitheantais urlabhra nó fág bán í le go mbraithfidh tú go huathoibríoch í.",
 	"settings.personal.audio.language.label": "Teanga",
+	"settings.personal.audio.micThreshold.description": "",
+	"settings.personal.audio.micThreshold.label": "",
 	"settings.personal.audio.sections.sttSettings.title": "Socruithe STT",
 	"settings.personal.audio.sections.ttsSettings.title": "Socruithe TTS",
 	"settings.personal.audio.sections.voice.title": "Guth",

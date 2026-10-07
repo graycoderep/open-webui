@@ -2854,6 +2854,8 @@
 	"settings.personal.audio.kokoroVoice.label": "Set rødd",
 	"settings.personal.audio.language.description": "Set eitt mál til talukenning, ella lat standa tómt fyri at finna tað sjálvvirkandi.",
 	"settings.personal.audio.language.label": "Mál",
+	"settings.personal.audio.micThreshold.description": "",
+	"settings.personal.audio.micThreshold.label": "",
 	"settings.personal.audio.sections.sttSettings.title": "STT-stillingar",
 	"settings.personal.audio.sections.ttsSettings.title": "TTS-stillingar",
 	"settings.personal.audio.sections.voice.title": "Rødd",

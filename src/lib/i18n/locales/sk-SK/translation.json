@@ -2886,6 +2886,8 @@
 	"settings.personal.audio.kokoroVoice.label": "Nastaviť hlas",
 	"settings.personal.audio.language.description": "Nastavte jazyk rozpoznávania reči alebo nechajte prázdne pre automatické rozpoznanie.",
 	"settings.personal.audio.language.label": "Jazyk",
+	"settings.personal.audio.micThreshold.description": "",
+	"settings.personal.audio.micThreshold.label": "",
 	"settings.personal.audio.sections.sttSettings.title": "Nastavenia STT (Rozpoznávanie reči)",
 	"settings.personal.audio.sections.ttsSettings.title": "Nastavenia TTS (Text-to-Speech)",
 	"settings.personal.audio.sections.voice.title": "Hlas",

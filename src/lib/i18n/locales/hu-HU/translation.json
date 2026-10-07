@@ -2854,6 +2854,8 @@
 	"settings.personal.audio.kokoroVoice.label": "Hang beállítása",
 	"settings.personal.audio.language.description": "Állítsa be a beszédfelismerés nyelvét, vagy hagyja üresen az automatikus felismeréshez.",
 	"settings.personal.audio.language.label": "Nyelv",
+	"settings.personal.audio.micThreshold.description": "",
+	"settings.personal.audio.micThreshold.label": "",
 	"settings.personal.audio.sections.sttSettings.title": "STT beállítások",
 	"settings.personal.audio.sections.ttsSettings.title": "TTS beállítások",
 	"settings.personal.audio.sections.voice.title": "Hang",
