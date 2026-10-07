@@ -26,6 +26,7 @@
 
 	let STTEngine = '';
 	let STTLanguage = '';
+	let STTSilenceDuration = 2000;
 
 	let TTSEngine = '';
 	let TTSEngineConfig = {};
@@ -96,6 +97,7 @@
 
 		STTEngine = $settings?.audio?.stt?.engine ?? '';
 		STTLanguage = $settings?.audio?.stt?.language ?? '';
+		STTSilenceDuration = Number($settings?.audio?.stt?.silenceDuration) || 2000;
 
 		TTSEngine = $settings?.audio?.tts?.engine ?? '';
 		TTSEngineConfig = $settings?.audio?.tts?.engineConfig ?? {};
@@ -166,7 +168,11 @@
 			audio: {
 				stt: {
 					engine: STTEngine !== '' ? STTEngine : undefined,
-					language: STTLanguage !== '' ? STTLanguage : undefined
+					language: STTLanguage !== '' ? STTLanguage : undefined,
+					silenceDuration:
+						Number(STTSilenceDuration) > 0 && Number(STTSilenceDuration) !== 2000
+							? Math.round(Number(STTSilenceDuration))
+							: undefined
 				},
 				tts: {
 					engine: TTSEngine !== '' ? TTSEngine : undefined,
@@ -238,6 +244,24 @@
 						setSpeechAutoSend(event.detail);
 					}}
 				/>
+			</UserSettingRow>
+
+			<UserSettingRow
+				label={$i18n.t('settings.personal.audio.silenceDuration.label')}
+				description={$i18n.t('settings.personal.audio.silenceDuration.description')}
+			>
+				<div class="relative flex items-center gap-1.5 text-xs text-gray-400 dark:text-gray-600">
+					<input
+						type="number"
+						min="300"
+						max="10000"
+						step="100"
+						bind:value={STTSilenceDuration}
+						aria-label={$i18n.t('settings.personal.audio.silenceDuration.label')}
+						class="h-7 w-20 rounded-lg border border-gray-100/50 bg-gray-50/40 px-2 text-right text-xs text-gray-700 outline-hidden transition-colors focus:border-blue-400 dark:border-white/[0.04] dark:bg-white/[0.03] dark:text-gray-300 dark:focus:border-blue-500"
+					/>
+					{$i18n.t('ms')}
+				</div>
 			</UserSettingRow>
 		</UserSettingSection>
 

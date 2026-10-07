@@ -162,6 +162,12 @@
 	};
 
 	const MIN_DECIBELS = -55;
+	// Silence (ms) after the last detected sound before the recording is sent; user-configurable.
+	const DEFAULT_SILENCE_MS = 2000;
+	$: silenceMs = Math.max(
+		300,
+		Math.min(10000, Number($settings?.audio?.stt?.silenceDuration) || DEFAULT_SILENCE_MS)
+	);
 	const VISUALIZER_BUFFER_LENGTH = 300;
 
 	const transcribeHandler = async (audioBlob) => {
@@ -369,7 +375,7 @@
 
 				// Start silence detection only after initial speech/noise has been detected
 				if (hasStartedSpeaking) {
-					if (Date.now() - lastSoundTime > 2000) {
+					if (Date.now() - lastSoundTime > silenceMs) {
 						confirmed = true;
 
 						if (mediaRecorder) {
