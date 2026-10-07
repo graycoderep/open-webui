@@ -320,6 +320,8 @@ type ModelOptions = {
 type AudioSettings = {
 	stt?: any;
 	tts?: any;
+	/** Call mode: default preset and per-chat-model presets ('' = no preset for that model). */
+	call?: { modelId?: string; models?: Record<string, string> };
 	STTEngine?: string;
 	TTSEngine?: string;
 	speaker?: string;

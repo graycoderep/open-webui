@@ -29,6 +29,8 @@
 	let wakeLock = null;
 
 	let model = null;
+	// Follow the call preset while the overlay is open (voice, avatar and emoji come from it).
+	$: model = $models.find((m) => m.id === modelId) ?? null;
 
 	let loading = false;
 	let confirmed = false;
@@ -757,8 +759,6 @@
 				}
 			});
 		}
-
-		model = $models.find((m) => m.id === modelId);
 
 		if ($settings.audio?.tts?.engine === 'browser-kokoro' && !$TTSWorker) {
 			try {

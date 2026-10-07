@@ -2,7 +2,7 @@
 	import { toast } from 'svelte-sonner';
 	import { createEventDispatcher, onMount, getContext } from 'svelte';
 
-	import { user, settings, config } from '$lib/stores';
+	import { user, settings, config, models, type Model } from '$lib/stores';
 	import { getVoices as _getVoices } from '$lib/apis/audio';
 
 	import Switch from '$lib/components/common/Switch.svelte';
@@ -11,6 +11,7 @@
 	import UserSettingField from './UserSettingField.svelte';
 	import UserSettingRow from './UserSettingRow.svelte';
 	import SettingsSelect from '$lib/components/common/SettingsSelect.svelte';
+	import XMark from '$lib/components/icons/XMark.svelte';
 	import UserSettingSection from './UserSettingSection.svelte';
 	const dispatch = createEventDispatcher();
 
@@ -39,6 +40,28 @@
 
 	// Audio speed control
 	let playbackRate = 1;
+
+	// Call mode: default model (preset) used when a call is opened
+	let callModelId = '';
+	// Per-chat-model overrides: [{ model: chat model id, preset: call model id or '' = no preset }]
+	let callModelMap: { model: string; preset: string }[] = [];
+
+	// Only custom (workspace) presets are offered: base models from connections are text-oriented.
+	// A previously saved base model stays listed so the current choice is still visible.
+	const callPresetOptions = (models: Model[], current: string) =>
+		models.filter((m) => !!m?.info?.base_model_id || (current !== '' && m.id === current));
+
+	// The chat-model column lists base models only; presets are what the row maps to, not from.
+	const callChatModelOptions = (models: Model[], current: string) =>
+		models.filter((m) => !m?.info?.base_model_id || (current !== '' && m.id === current));
+
+	const addCallModelEntry = () => {
+		callModelMap = [...callModelMap, { model: '', preset: '' }];
+	};
+
+	const removeCallModelEntry = (idx: number) => {
+		callModelMap = callModelMap.filter((_, i) => i !== idx);
+	};
 	const inputClass =
 		'h-7 w-full rounded-lg border border-gray-100/50 bg-gray-50/40 px-2 text-xs text-gray-700 outline-hidden transition-colors placeholder:text-gray-300 focus:border-blue-400 dark:border-white/[0.04] dark:bg-white/[0.03] dark:text-gray-300 dark:placeholder:text-gray-700 dark:focus:border-blue-500';
 
@@ -107,6 +130,11 @@
 		}
 
 		nonLocalVoices = $settings.audio?.tts?.nonLocalVoices ?? false;
+		callModelId = $settings?.audio?.call?.modelId ?? '';
+		callModelMap = Object.entries($settings?.audio?.call?.models ?? {}).map(([model, preset]) => ({
+			model,
+			preset: typeof preset === 'string' ? preset : ''
+		}));
 
 		await getVoices();
 	});
@@ -175,6 +203,15 @@
 					voice: voice !== '' ? voice : undefined,
 					defaultVoice: $config?.audio?.tts?.voice ?? '',
 					nonLocalVoices: $config.audio.tts.engine === '' ? nonLocalVoices : undefined
+				},
+				call: {
+					modelId: callModelId !== '' ? callModelId : undefined,
+					models:
+						callModelMap.filter((e) => e.model !== '').length > 0
+							? Object.fromEntries(
+									callModelMap.filter((e) => e.model !== '').map((e) => [e.model, e.preset])
+								)
+							: undefined
 				}
 			}
 		});
@@ -304,6 +341,77 @@
 					x
 				</div>
 			</UserSettingRow>
+		</UserSettingSection>
+
+		<UserSettingSection title={$i18n.t('settings.personal.audio.sections.call.title')}>
+			<UserSettingRow
+				label={$i18n.t('settings.personal.audio.callModel.label')}
+				description={$i18n.t('settings.personal.audio.callModel.description')}
+			>
+				<SettingsSelect
+					bind:value={callModelId}
+					className="w-full sm:w-auto sm:max-w-[16rem]"
+					ariaLabel={$i18n.t('settings.personal.audio.callModel.label')}
+					placeholder={$i18n.t('Select a model')}
+				>
+					<option value="">{$i18n.t('settings.personal.audio.callModel.sameAsChat')}</option>
+					{#each callPresetOptions($models, callModelId) as m (m.id)}
+						<option value={m.id} class="bg-gray-100 dark:bg-gray-700">{m.name ?? m.id}</option>
+					{/each}
+				</SettingsSelect>
+			</UserSettingRow>
+
+			<UserSettingField
+				label={$i18n.t('settings.personal.audio.callModels.label')}
+				description={$i18n.t('settings.personal.audio.callModels.description')}
+			>
+				<div class="flex flex-col gap-1.5">
+					{#each callModelMap as entry, idx}
+						<div class="flex items-center gap-1.5">
+							<SettingsSelect
+								bind:value={entry.model}
+								className="min-w-0 flex-1"
+								ariaLabel={$i18n.t('settings.personal.audio.callModels.chatModel')}
+								placeholder={$i18n.t('settings.personal.audio.callModels.chatModel')}
+							>
+								<option value="">{$i18n.t('Select a model')}</option>
+								{#each callChatModelOptions($models, entry.model) as m (m.id)}
+									<option value={m.id} class="bg-gray-100 dark:bg-gray-700">{m.name ?? m.id}</option
+									>
+								{/each}
+							</SettingsSelect>
+							<span class="shrink-0 text-xs text-gray-400 dark:text-gray-600">→</span>
+							<SettingsSelect
+								bind:value={entry.preset}
+								className="min-w-0 flex-1"
+								ariaLabel={$i18n.t('settings.personal.audio.callModels.callModel')}
+								placeholder={$i18n.t('settings.personal.audio.callModels.callModel')}
+							>
+								<option value="">{$i18n.t('settings.personal.audio.callModels.noPreset')}</option>
+								{#each callPresetOptions($models, entry.preset) as m (m.id)}
+									<option value={m.id} class="bg-gray-100 dark:bg-gray-700">{m.name ?? m.id}</option
+									>
+								{/each}
+							</SettingsSelect>
+							<button
+								type="button"
+								class="shrink-0 rounded-lg p-1 text-gray-400 transition hover:bg-gray-100 hover:text-gray-700 dark:text-gray-600 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+								aria-label={$i18n.t('Remove')}
+								on:click={() => removeCallModelEntry(idx)}
+							>
+								<XMark className="size-3.5" strokeWidth="2" />
+							</button>
+						</div>
+					{/each}
+					<button
+						type="button"
+						class="self-start text-xs text-gray-500 transition hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200"
+						on:click={addCallModelEntry}
+					>
+						+ {$i18n.t('settings.personal.audio.callModels.add')}
+					</button>
+				</div>
+			</UserSettingField>
 		</UserSettingSection>
 
 		{#if TTSEngine === 'browser-kokoro'}

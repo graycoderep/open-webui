@@ -13,6 +13,7 @@
 	import type { i18n as i18nType } from 'i18next';
 	import { WEBUI_BASE_URL } from '$lib/constants';
 	import equal from 'fast-deep-equal';
+	import { resolveCallModelId } from '$lib/utils/call';
 
 	import {
 		chatId,
@@ -194,6 +195,13 @@
 		selectedModelIds = [atSelectedModel.id];
 	} else {
 		selectedModelIds = selectedModels;
+	}
+
+	// Call mode talks to a "call preset": per-model preset > user default > the chat model itself.
+	let callModelId: string | null = null;
+	$: callModelId = resolveCallModelId(selectedModelIds?.at(0) ?? null, $models, $settings).id;
+	$: if ($showCallOverlay) {
+		notifyCallModel();
 	}
 	let serverContextUsage = null;
 	let contextUsage = null;
@@ -2211,6 +2219,20 @@
 		showControls.set(true);
 	};
 
+	// Warn once per call when a configured call preset is not available to this user.
+	const notifyCallModel = () => {
+		const resolution = resolveCallModelId(selectedModelIds?.at(0) ?? null, $models, $settings);
+		if (resolution.missing) {
+			const fallback = $models.find((m) => m.id === resolution.id);
+			toast.warning(
+				$i18n.t('Call model "{{modelId}}" is unavailable; using "{{fallback}}" instead', {
+					modelId: resolution.missing,
+					fallback: fallback?.name ?? resolution.id ?? ''
+				})
+			);
+		}
+	};
+
 	const initNewChat = async () => {
 		bridge?.end();
 		console.log('initNewChat');
@@ -3490,8 +3512,15 @@
 			: atSelectedModel !== undefined
 				? [atSelectedModel.id]
 				: selectedModels;
+		// The chat's own selection; the backend persists the user message's `models` as the chat's
+		// model list, so a call preset must never end up there.
+		const chatModelIds = [...selectedModelIds];
+		// Call mode: route the request to the call preset instead of the chat model.
+		if (!modelId && $showCallOverlay && callModelId && $models.some((m) => m.id === callModelId)) {
+			selectedModelIds = [callModelId];
+		}
 		if (!modelId && history.messages[parentId]) {
-			history.messages[parentId].models = [...selectedModelIds];
+			history.messages[parentId].models = [...chatModelIds];
 		}
 
 		// Create response messages for each selected model
@@ -4898,7 +4927,7 @@
 						bind:files
 						chatId={$chatId}
 						chatUser={chatOwner}
-						modelId={selectedModelIds?.at(0) ?? null}
+						modelId={($showCallOverlay ? callModelId : null) ?? selectedModelIds?.at(0) ?? null}
 						models={selectedModelIds.reduce((a, e, i, arr) => {
 							const model = $models.find((m) => m.id === e);
 							if (model) {
